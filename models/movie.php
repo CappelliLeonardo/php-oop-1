@@ -1,11 +1,15 @@
 <?php
+
+    // include './db.php';
+
     class Movie{
         public $title;          //Variabile d'istanza
         public $director;       //Variabile d'istanza
         public $genre;          //Variabile d'istanza
         private $rate;          //Variabile d'istanza
 
-        public function __construct ($_title, $_director, $_genre, $rate){     //constructor function
+
+        public function __construct ($_title, $_director, $rate, $_genre =[] ){     //constructor function
             $this ->title = $_title;
             $this ->director = $_director;
             $this ->genre = $_genre;
@@ -26,11 +30,11 @@
 
 
     
-    $miglioVerde = new Movie ('Il Miglio Verde', 'Frank Darabont', 'Giallo', '5ggg');
+    $miglioVerde = new Movie ('Il Miglio Verde', 'Frank Darabont',5,  'Giallo');
     var_dump($miglioVerde);
 
-    $hulk = new Movie ('Hulk', 'Louis Leterrier','Fantascienza','dieci');
+    $hulk = new Movie ('Hulk', 'Louis Leterrier','dieci', ['Fantascienza', "un sacco di generi"]);
     var_dump ($hulk);
 
-    $biancaneve = new Movie ('Biancaneve e i sette nani', 'Disney', 'Fantastico',8);
+    $biancaneve = new Movie ('Biancaneve e i sette nani', 'Disney',8, ['Fantastico', 'secondogenere', 'geenre3']);
     var_dump($biancaneve);
